@@ -29,12 +29,29 @@ public class App {
             "0999999999"
         );
 
+        Pedido p3 = new Pedido(
+            
+            "Alex",
+            "CocaCola",
+            15,
+            "alex@example.com",
+            "0999999999"
+
+        );
+
 
        
-
-
         PedidoService service = new PedidoService();
         service.registrar(p1);
+
+        service.registrar(p2);
+
+        service.registrar(p3);
+
+        //PedidoService service2 = new PedidoService();
+        //service2.registrar(p3);
+
+ 
         
     }
 }

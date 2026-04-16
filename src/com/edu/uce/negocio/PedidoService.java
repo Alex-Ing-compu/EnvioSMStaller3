@@ -14,7 +14,7 @@ public class PedidoService {
 
         // enviar por maail si el total es mayor a 100
         
-        if (pedido.getTotal() > 100) {
+        if (pedido.getTotal() > 120) {
             NotificadorMail mail = new NotificadorMail();
             mail.enviar(pedido.getCorreo(), 
                 "su pedido supera los 100 USD");
@@ -26,6 +26,12 @@ public class PedidoService {
             NotificacionSMS sms = new NotificacionSMS();
             sms.enviar(pedido.getTelefono(), 
                 "su pedido es menor o igual a 100 USD");
+        }
+
+
+        if(pedido.getTotal()< 50){
+            NotificadorWasa wasa1 = new NotificadorWasa();
+            wasa1.enviar(pedido.getCorreo(), "Enviando notificacion por wasap");
         }
 
     }
